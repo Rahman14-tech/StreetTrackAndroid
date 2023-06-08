@@ -82,6 +82,14 @@ object Repo{
         ),
     )
     fun getPost(id: Int) = data.firstOrNull { it.id == id }
+
+    fun Approve(tempId: Int) {
+        for(datum in data){
+            if(datum.id == tempId){
+                datum.govApproval = true
+            }
+        }
+    }
     fun disApprove(tempId :Int){
         for(datum in data){
             if(datum.id == tempId){
